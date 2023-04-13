@@ -79,7 +79,7 @@ volatile uint8_t quit_signal_app;
 static void
 int_handler(int sig_num)
 {
-	printf("\n\tExiting on signal %d\n\n", sig_num);
+	printf("\n\tExiting ...\n\n");
     quit_signal_app = 1;
     exit(1);
 }
