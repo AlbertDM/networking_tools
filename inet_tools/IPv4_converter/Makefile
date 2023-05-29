@@ -4,11 +4,10 @@
 CFLAGS  = -g -Wall
 INCLUDES = -I../build/artifacts
 LIBDIR = ../build/lib
-LIBS = -lIphlpapi -lws2_32
 CP = cp
 RM = rm
 CC = gcc
-TARGET = ip_dec_to_string
+TARGET = ipv4_converter
 
 ifeq ($(MSYSTEM), MINGW32)
 LFLAGS = -L./lib/lib_ethdev/winpcap
@@ -20,12 +19,13 @@ endif
 ifeq ($(OS),Windows_NT)
 all: $(TARGET)
 $(TARGET):
+	LIBS = -lIphlpapi -lws2_32
 	$(CC) -o $(TARGET) $(TARGET).c $(CFLAGS) $(INCLUDES) $(LIBS) $(LFLAGS) -lpcap
 
 else
 all: $(TARGET)
 $(TARGET):
-	$(CC) -o $(TARGET) $(TARGET).c $(CFLAGS) $(INCLUDES) $(LIBS) $(LFLAGS) -lpcap
+	$(CC) -o $(TARGET) $(TARGET).c $(CFLAGS) $(INCLUDES) $(LFLAGS) -lpcap
 	
 endif
 
