@@ -82,7 +82,7 @@ int main ()
     UINT ip_prefix;
 
 
-    printf("\n\n\n\t<< Npcap Adapters list >>\nalbert.domingo@technica-engineering.de\n");
+    printf("\n\n\n\t<< Npcap Adapters list >>\nalbertdm.engineer@gmail.com\n");
 
     ULONG ulOutBufLen = sizeof (IP_ADAPTER_INFO);
     pAdapterInfo = (IP_ADAPTER_INFO *) MALLOC(sizeof (IP_ADAPTER_INFO));
